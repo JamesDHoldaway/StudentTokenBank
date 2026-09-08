@@ -21,6 +21,9 @@ def apply_rule(student, rule):
     students[student] += TOKEN_RULES[rule]
     print(f"{student}: {rule} ({TOKEN_RULES[rule]:+d}) -> new balance {students[student]}")
 
-apply_rule("Test Student", "attendance")
-apply_rule("Test Student", "no_practice")
-apply_rule("New Kid", "homework")
+while True:
+    student = input("Student name (or 'quit' to exit): ")
+    if student.lower() == "quit":
+        break 
+    rule = input("Rule: ")
+    apply_rule(student, rule)

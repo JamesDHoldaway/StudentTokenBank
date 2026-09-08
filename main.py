@@ -16,8 +16,11 @@ students = {
 print(students)
 
 def apply_rule(student, rule):
+    if student not in students:
+        students[student] = 0
     students[student] += TOKEN_RULES[rule]
     print(f"{student}: {rule} ({TOKEN_RULES[rule]:+d}) -> new balance {students[student]}")
 
 apply_rule("Test Student", "attendance")
 apply_rule("Test Student", "no_practice")
+apply_rule("New Kid", "homework")

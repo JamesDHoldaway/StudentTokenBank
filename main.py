@@ -16,6 +16,9 @@ students = {
 print(students)
 
 def apply_rule(student, rule):
+    if rule not in TOKEN_RULES:
+        print(rule,"is not a valid rule. Try again")
+        return
     if student not in students:
         students[student] = 0
     students[student] += TOKEN_RULES[rule]

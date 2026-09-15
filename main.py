@@ -18,7 +18,7 @@ while True:
             print("No student on record")
     elif choice == "3":
         for student in students:
-            print(student, students[student])
+            print(student,"-",students[student])
     elif choice == "4":
         break
     else:

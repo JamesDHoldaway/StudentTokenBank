@@ -39,11 +39,26 @@ def apply_rule(student, rule):
     print(f"{student}: {rule} ({TOKEN_RULES[rule]:+d}) -> new balance {students[student]}")
 
 while True:
-    student = input("Student name (or 'quit' to exit): ")
-    if student.lower() == "quit":
-        break 
-    rule = input("Rule: ")
-    apply_rule(student, rule)
+    print("\n1. Apply a rule\n2. View a student's balance\n3. List all students\n4. Quit")
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        student = input("Student name: ")
+        rule = input("Rule: ")
+        apply_rule(student, rule)
+    elif choice == "2":
+        student = input("Enter student's name for balance: ")
+        try: 
+            print(students[student])
+        except KeyError:
+            print("No student on record")
+    elif choice == "3":
+        for student in students:
+            print(student, students[student])
+    elif choice == "4":
+        break
+    else:
+        print("Not a valid option, try again")
 
 with open("students.json", "w") as f:
     json.dump(students, f)

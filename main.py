@@ -12,11 +12,20 @@ TOKEN_RULES = {
     "big_reward": -45,
 }
 
+def sort_students():
+    global students 
+    sorted_students = {}
+    for student in sorted(students):
+        sorted_students[student] = students[student]
+    students = sorted_students
+
 try: 
     with open("students.json", "r") as f:
         students = json.load(f)
 except FileNotFoundError:
     students = {}
+
+sort_students()
 
 print(students)
 

@@ -1,3 +1,5 @@
+import json
+
 TOKEN_RULES = {
     "attendance": 1,
     "homework": 1,
@@ -30,3 +32,8 @@ while True:
         break 
     rule = input("Rule: ")
     apply_rule(student, rule)
+
+with open("students.json", "w") as f:
+    json.dump(students, f)
+
+print("Saved!")

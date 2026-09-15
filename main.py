@@ -11,9 +11,11 @@ TOKEN_RULES = {
     "big_reward": -45,
 }
 
-students = {
-    "Test Student": 0,
-}
+try: 
+    with open("students.json", "r") as f:
+        students = json.load(f)
+except FileNotFoundError:
+    students = {}
 
 print(students)
 

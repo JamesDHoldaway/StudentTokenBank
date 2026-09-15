@@ -1,6 +1,7 @@
 import json
 
 TOKEN_RULES = {
+    "setup": 0,
     "attendance": 1,
     "homework": 1,
     "extraordinary": 1,

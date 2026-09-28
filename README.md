@@ -11,6 +11,7 @@ I built this piece to act as a real rewards system for my private students. The 
 - Saves and loads between sessions. 
 
 ## How to Run:
+Command-line version 
 ```
 git clone https://github.com/JamesDHoldaway/StudentTokenBank.git
 cd StudentTokenBank
@@ -18,7 +19,13 @@ python3 -m venv venv
 source venv/bin/activate
 python3 main.py
 ```
-No external dependencies required, all in base Python. 
+Web Version
+(assuming venv is created/activated, see above)
+```
+pip install -r requirements.txt
+python3 app.py
+```
+Then open the http link in your browser 
 
 ## Menu visual:
 ![alt text](image.png)
@@ -27,9 +34,7 @@ No external dependencies required, all in base Python.
 - CLI
 - Persistence 
 - Menu
-
-## What is planned to be built:
-- web version
+- Web Access
 
 ## Note:
 - students.json is not included in the repo because it holds real students names. So a cloned repo will start with an empty roster. 
